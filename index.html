@@ -3,199 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>دليل أنواع البيانات في بايثون: Mutable vs Immutable</title>
+    <title>دورة تعلم بايثون الاحترافية</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
-        body {
-            font-family: 'Tajawal', sans-serif;
-            background-color: #f1f5f9;
-        }
-        .python-blue { color: #3776ab; }
-        .python-yellow { color: #ffde57; }
-        .code-block {
-            background-color: #0f172a;
-            color: #e2e8f0;
-            direction: ltr;
-            text-align: left;
-            padding: 1.25rem;
-            border-radius: 0.75rem;
-            font-family: 'Courier New', Courier, monospace;
-            border-left: 4px solid #3776ab;
-        }
-        .keyword { color: #ff7b72; }
-        .comment { color: #8b949e; }
-        .string { color: #a5d6ff; }
+        body { font-family: 'Tajawal', sans-serif; }
     </style>
 </head>
-<body class="p-4 md:p-10">
-    <div class="max-w-5xl mx-auto">
-        <header class="text-center mb-12 bg-white p-8 rounded-2xl shadow-sm border-b-4 border-yellow-400">
-            <h1 class="text-4xl font-bold text-slate-800 mb-2">أنواع البيانات في Python</h1>
-            <p class="text-xl text-slate-600 italic">كيف تتعامل لغة بايثون مع الكائنات في الذاكرة؟</p>
-        </header>
+<body class="bg-slate-50 text-slate-800">
 
-        <div class="grid md:grid-cols-2 gap-8 mb-12">
-            <!-- Immutable Section -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border-t-8 border-red-500">
-                <h2 class="text-2xl font-bold text-red-600 mb-4 flex items-center">
-                    <span class="ml-2">🔒</span> الكائنات غير المتغيرة (Immutable)
-                </h2>
-                <p class="text-slate-700 mb-6 leading-relaxed">
-                    في بايثون، بمجرد إنشاء هذه الكائنات، <b>لا يمكن</b> تغيير حالتها أو محتواها. أي محاولة تعديل تؤدي لإنشاء كائن جديد بمعرف (ID) جديد.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Numbers</span>
-                        <code class="text-blue-600">int, float, complex</code>
-                    </div>
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Strings</span>
-                        <code class="text-blue-600">str</code>
-                    </div>
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Tuples</span>
-                        <code class="text-blue-600">tuple</code>
-                    </div>
-                </div>
-                <div class="mt-6 code-block text-sm">
-                    <span class="comment"># اختبار الهوية في بايثون</span><br>
-                    x = <span class="keyword">5</span><br>
-                    print(<span class="keyword">id</span>(x)) <span class="comment"># مثلاً: 14070</span><br>
-                    x = x + <span class="keyword">1</span><br>
-                    print(<span class="keyword">id</span>(x)) <span class="comment"># سيتغير الـ ID حتماً!</span>
-                </div>
-            </div>
+    <header class="bg-blue-600 text-white py-12 shadow-lg text-center">
+        <h1 class="text-4xl font-bold mb-2">دورة البرمجة بلغة بايثون</h1>
+        <p class="text-blue-100">شروحات تفاعلية ومحاكيات تطبيقية</p>
+    </header>
 
-            <!-- Mutable Section -->
-            <div class="bg-white p-6 rounded-2xl shadow-md border-t-8 border-emerald-500">
-                <h2 class="text-2xl font-bold text-emerald-600 mb-4 flex items-center">
-                    <span class="ml-2">📝</span> الكائنات المتغيرة (Mutable)
-                </h2>
-                <p class="text-slate-700 mb-6 leading-relaxed">
-                    تسمح بايثون بتغيير محتوى هذه الكائنات "في مكانها" (In-place). هذا يعني أن الـ ID الخاص بالكائن يبقى ثابتاً حتى بعد التعديل.
-                </p>
-                <div class="space-y-4">
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Lists</span>
-                        <code class="text-blue-600">list</code>
+    <main class="max-w-4xl mx-auto p-6 -mt-10">
+        <div class="bg-white rounded-2xl shadow-xl p-8">
+            <h2 class="text-2xl font-bold mb-6 border-b-2 border-blue-100 pb-2 text-blue-600">📜 قائمة الدروس والمحاكيات</h2>
+            
+            <div class="grid gap-4">
+                
+                <div class="group flex items-center justify-between p-4 border border-slate-200 rounded-xl hover:border-blue-400 hover:bg-blue-50 transition-all">
+                    <div>
+                        <h3 class="font-bold text-lg text-slate-700">الدرس الأول: Mutable vs Immutable</h3>
+                        <p class="text-sm text-slate-500 text-right">فهم كيفية تعامل بايثون مع الكائنات في الذاكرة.</p>
                     </div>
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Dictionaries</span>
-                        <code class="text-blue-600">dict</code>
-                    </div>
-                    <div class="flex justify-between bg-slate-50 p-3 rounded-lg border">
-                        <span class="font-bold">Sets</span>
-                        <code class="text-blue-600">set</code>
-                    </div>
+                    <a href="index.html" class="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm hover:bg-blue-700">ابدأ الدرس</a>
                 </div>
-                <div class="mt-6 code-block text-sm">
-                    <span class="comment"># تعديل القائمة في مكانها</span><br>
-                    my_list = [<span class="keyword">1</span>, <span class="keyword">2</span>]<br>
-                    print(<span class="keyword">id</span>(my_list))<br>
-                    my_list.append(<span class="keyword">3</span>)<br>
-                    print(<span class="keyword">id</span>(my_list)) <span class="comment"># نفس الـ ID تماماً</span>
+
+                <div class="flex items-center justify-between p-4 border border-slate-100 rounded-xl opacity-60">
+                    <div>
+                        <h3 class="font-bold text-lg">الدرس الثاني: المتغيرات وأنواع البيانات</h3>
+                        <p class="text-sm">قريباً...</p>
+                    </div>
+                    <span class="bg-slate-200 text-slate-500 px-4 py-2 rounded-lg text-sm">قيد التحضير</span>
                 </div>
+
             </div>
         </div>
 
-        <!-- Interactive Python Visualizer -->
-        <section class="bg-slate-900 p-8 rounded-3xl shadow-2xl text-white">
-            <h3 class="text-2xl font-bold mb-8 text-center border-b border-slate-700 pb-4">
-                تفاعل مع محاكي الذاكرة (Python Interpreter Visual)
-            </h3>
-            
-            <div class="grid lg:grid-cols-2 gap-10">
-                <div class="space-y-6">
-                    <div class="bg-slate-800 p-5 rounded-xl border border-slate-700">
-                        <h4 class="text-yellow-400 font-bold mb-3">الحالة الحالية للذاكرة:</h4>
-                        <div class="space-y-4" id="memory-canvas">
-                            <div class="flex items-center justify-between p-3 bg-slate-700 rounded border-l-4 border-red-500">
-                                <span>اسم المتغير: <code class="text-yellow-400">text</code></span>
-                                <div id="imm-box" class="bg-red-500 px-4 py-1 rounded font-mono">"Python"</div>
-                                <span class="text-xs opacity-60">ID: <span id="imm-id">9901</span></span>
-                            </div>
-                            <div class="flex items-center justify-between p-3 bg-slate-700 rounded border-l-4 border-emerald-500">
-                                <span>اسم المتغير: <code class="text-yellow-400">data</code></span>
-                                <div id="mut-box" class="bg-emerald-500 px-4 py-1 rounded font-mono">[10, 20]</div>
-                                <span class="text-xs opacity-60">ID: <span id="mut-id">5502</span></span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="grid grid-cols-2 gap-4">
-                        <button onclick="runPythonImm()" class="bg-red-600 hover:bg-red-700 p-3 rounded-lg font-bold transition-all transform active:scale-95 text-sm">
-                            تعديل النص (String)
-                        </button>
-                        <button onclick="runPythonMut()" class="bg-emerald-600 hover:bg-emerald-700 p-3 rounded-lg font-bold transition-all transform active:scale-95 text-sm">
-                            تعديل القائمة (List)
-                        </button>
-                    </div>
-                </div>
+        <footer class="text-center mt-12 text-slate-400 text-sm">
+            &copy; 2026 جميع الحقوق محفوظة للدورة التدريبية
+        </footer>
+    </main>
 
-                <div class="bg-black p-5 rounded-xl font-mono text-sm overflow-hidden border border-slate-800">
-                    <h4 class="text-blue-400 mb-2 underline">Console Output:</h4>
-                    <div id="console" class="h-48 overflow-y-auto space-y-1 text-green-400">
-                        > Python visualizer ready...
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Python Specific Warnings -->
-        <div class="mt-12 bg-blue-50 border-r-4 border-blue-500 p-6 rounded-xl">
-            <h3 class="text-xl font-bold text-blue-800 mb-3">ملاحظات هامة للمبرمجين (Python Tips):</h3>
-            <ul class="list-disc list-inside space-y-2 text-blue-900">
-                <li><b>تحذير القيم الافتراضية:</b> لا تستخدم أبداً كائنات متغيرة (مثل القوائم) كقيم افتراضية في تعريف الدوال؛ لأنها تشارك نفس الكائن عبر جميع الاستدعاءات.</li>
-                <li><b>دالة Copy:</b> عند التعامل مع القوائم المتداخلة، استخدم <code class="bg-blue-100 px-1 rounded">copy.deepcopy()</code> لتجنب تعديل البيانات الأصلية بالخطأ.</li>
-                <li><b>مفاتيح القواميس:</b> بايثون تشترط أن يكون مفتاح القاموس <b>Immutable</b> دائماً.</li>
-            </ul>
-        </div>
-    </div>
-
-    <script>
-        let immId = 9901;
-        let mutId = 5502;
-
-        function logToConsole(msg, type='info') {
-            const consoleDiv = document.getElementById('console');
-            const entry = document.createElement('div');
-            entry.innerHTML = `<span class="text-slate-500">></span> ${msg}`;
-            if(type === 'warn') entry.className = 'text-yellow-400';
-            if(type === 'success') entry.className = 'text-emerald-400';
-            consoleDiv.appendChild(entry);
-            consoleDiv.scrollTop = consoleDiv.scrollHeight;
-        }
-
-        function runPythonImm() {
-            const box = document.getElementById('imm-box');
-            const idSpan = document.getElementById('imm-id');
-            
-            // Simulation of re-assignment
-            immId += Math.floor(Math.random() * 100) + 1;
-            box.style.opacity = '0';
-            
-            setTimeout(() => {
-                box.innerText = '"B2-Updated"';
-                idSpan.innerText = immId;
-                box.style.opacity = '1';
-                logToConsole("text = 'B2-Updated'", 'info');
-                logToConsole("بايثون اكتشفت أن الـ String غير متغير، فأنشأت كائناً جديداً بـ ID جديد.", 'warn');
-            }, 300);
-        }
-
-        function runPythonMut() {
-            const box = document.getElementById('mut-box');
-            const idSpan = document.getElementById('mut-id');
-            
-            // Simulation of in-place modification
-            box.innerText = "[10, 20, 99]";
-            box.classList.add('ring-4', 'ring-white');
-            setTimeout(() => box.classList.remove('ring-4'), 500);
-            
-            logToConsole("data.append(99)", 'info');
-            logToConsole(`تم تعديل القائمة بنجاح. الـ ID مازال ${mutId}. لم يتم إنشاء كائن جديد.`, 'success');
-        }
-    </script>
 </body>
 </html>
